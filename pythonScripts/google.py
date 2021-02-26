@@ -7,7 +7,9 @@ import os
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
+# use 0,1.. for chaning the voice
 engine.setProperty('voice', voices[0].id)
+
 
 
 def speak(audio):
@@ -37,7 +39,8 @@ def takeCommand():
 
 class google:
     def __init__(self):
-        self.driver = webdriver.Chrome(executable_path='C:\\Users\\KISHAN\\Downloads\\chromedriver.exe')
+        # enter the path of the chrome driver
+        self.driver = webdriver.Chrome(executable_path=f'{path_value}chromedriver.exe')
         self.driver.get("https://www.google.com")
 
     def searchGoogle(self,qq):
